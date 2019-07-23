@@ -1,6 +1,3 @@
 {
-    "navigationBarTitleText": "祝福礼卡",
-    "usingComponents": {
-        "poster": "../../../miniprogram_npm/wxa-plugin-canvas/poster/index"
-    }
+  "usingComponents": {}
 }
