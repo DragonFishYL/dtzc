@@ -1,0 +1,128 @@
+<template name="feedback">
+    <swiper-item>
+        <view class="feedback_item">
+            <view class="feedback_marks_view" style="margin-bottom: 14rpx; margin-top: 78rpx;">
+                <image class="feedback_marks" src="/images/feedback_marks.png"></image>
+            </view>
+            <view class="feedback_text_view">
+                <text class="feedback_text">{{content}}</text>
+            </view>
+            <view class="feedback_marks_view" style="justify-content: flex-end;">
+                <image class="feedback_marks" src="/images/feedback_marks.png"></image>
+            </view>
+            <image class="feedback_head_image" src="{{img}}"></image>
+            <view class="feedback_username">{{name}}</view>
+            <view class="feedback_job">{{job}}</view>
+        </view>
+    </swiper-item>
+</template>
+<template name="solution">
+    <view bindtap="planItemClick" class="content_type_item" data-index="{{index}}">
+        <image binderror="solutionError" class="content_type_item_image" data-errorIndex="{{index}}" mode="aspectFill" src="{{logo?logo:'/images/plan_icon_default.png'}}"></image>
+        <text class="content_type_item_text">{{title}}</text>
+    </view>
+</template>
+<template name="homeBanner">
+    <view class="top_view">
+        <swiper autoplay="true" bindchange="bannerchange" circular="true" class="swiper">
+            <swiper-item wx:for="{{bannerImages}}">
+                <image bindtap="bannerClick" class="banner_image" data-index="{{index}}" data-src="{{item.url?item.url:''}}" data-type="{{item.type}}" src="{{item.img}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="banner_dots_view">
+            <view class="{{bannerCurrent==index?'banner_dots_active':'banner_dots'}}" wx:for="{{bannerImages}}"></view>
+        </view>
+    </view>
+</template>
+<view class="container">
+    <image class="bg_right" src="/images/bg_right1.png"></image>
+    <view style="position: relative;">
+        <template is="homeBanner" data="{{bannerImages:bannerImages,bannerCurrent:bannerCurrent}}"></template>
+        <view class="home_type_view">
+            <view bindtap="{{userInfo?'submitDemandClick':''}}" class="type_item_view">
+                <image class="type_item_image" src="/images/demand_icon.png"></image>
+                <text class="type_item_text">提交需求</text>
+                <button bindgetuserinfo="getUserInfo" class="login_btn" openType="getUserInfo" wx:if="{{!userInfo}}"></button>
+            </view>
+            <view bindtap="planClick" class="type_item_view">
+                <image class="type_item_image" src="/images/plan_icon.png"></image>
+                <text class="type_item_text">解决方案</text>
+            </view>
+            <view bindtap="caseClick" class="type_item_view">
+                <image class="type_item_image" src="/images/case_icon.png"></image>
+                <text class="type_item_text">优秀案例</text>
+            </view>
+        </view>
+        <view class="content_view">
+            <view class="title_view">我们能做什么</view>
+            <view class="content_type_view" wx:if="{{solutionList.length>0}}">
+                <view class="content_type_item_view">
+                    <template is="solution" data="{{...solutionList[0],index:0}}"></template>
+                    <template is="solution" data="{{...solutionList[1],index:1}}"></template>
+                    <template is="solution" data="{{...solutionList[2],index:2}}"></template>
+                </view>
+                <view class="content_type_item_view">
+                    <template is="solution" data="{{...solutionList[3],index:3}}"></template>
+                    <template is="solution" data="{{...solutionList[4],index:4}}"></template>
+                    <template is="solution" data="{{...solutionList[5],index:5}}"></template>
+                </view>
+            </view>
+        </view>
+        <view class="case_view">
+            <image class="bg_left" src="/images/bg_left.png"></image>
+            <view style="position: relative;">
+                <view class="title_view">精选案例</view>
+                <view class="subtitle_view">为客户打造卓越商业价值的产品是我们的使命</view>
+                <view class="case_items_view">
+                    <view bindtap="caseItemClick" class="case_item_view" data-index="{{index}}" style="margin-right: {{(index+1)%2==0?'0rpx;':'20rpx;'}}" wx:for="{{caseList}}" wx:for-item="caseInfo">
+                        <image class="case_item_image" mode="aspectFill" src="{{caseInfo.coverUrl?caseInfo.coverUrl:'/images/case_cover_default.png'}}"></image>
+                        <view class="case_item_name">{{caseInfo.name}}</view>
+                        <view class="case_caseTypes_view">
+                            <view class="case_item_time" wx:for="{{caseInfo.caseTypes}}">{{item.caseType.name}}{{caseInfo.caseTypes.length-1==index?'':'/'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="moreCaseClick" class="more_view">
+                    <text style="margin-right: 13rpx;">查看更多案例</text>
+                    <image class="case_more_image" src="/images/home_more.png"></image>
+                    <image class="case_more_image" src="/images/home_more.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="feedback_view">
+            <image class="feedback_bg_right" src="/images/bg_right1.png"></image>
+            <view style="position: relative;">
+                <view class="title_view">客户的声音</view>
+                <view class="subtitle_view">来自市场验证后的真实反馈</view>
+                <view class="feedback_items">
+                    <swiper bindchange="feedbackchange" class="feedback_swiper" current="{{feedbackCurrent}}">
+                        <template is="feedback" data="{{...item}}" wx:for="{{feedbackList}}"></template>
+                    </swiper>
+                </view>
+                <view class="dots_view">
+                    <view class="feedbac_dots_view">
+                        <view class="{{feedbackCurrent==index?'feedback_dots_active':'feedback_dots'}}" wx:for="{{feedbackList}}"></view>
+                    </view>
+                    <view class="feedback_right_view">
+                        <image bindtap="feedbackLeftClick" class="left_right_image" src="/images/left.png"></image>
+                        <image bindtap="feedbackRightClick" class="left_right_image" src="/images/right.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="service_view">
+            <image class="bg_left_bottom_image" src="/images/bg_left_bottom.png"></image>
+            <image class="bg_bottom_image" src="/images/bg_bottom.png"></image>
+            <view style="position: relative;">
+                <view class="title_view">为优秀的企业提供服务</view>
+                <view class="subtitle_view">已有100+优秀的企业选择与我们合作，打磨出更好的产品</view>
+                <view class="service_items_view">
+                    <view class="service_item_view" style="margin-right: {{(index+1)%3==0?'0rpx;':'20rpx;'}}" wx:for="{{serviceList}}">
+                        <image class="service_item_image" src="{{item}}"></image>
+                    </view>
+                </view>
+                <image bindtap="immediatelysubmitDemandClick" class="taste_image" src="/images/home_taste_img.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

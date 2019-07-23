@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="244px" viewBox="0 0 375 244" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 4 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FDFDFD" offset="0%"></stop>
+            <stop stop-color="#F9F9F9" offset="100%"></stop>
+        </linearGradient>
+        <path d="M750,634 L749.849057,854 L389,854 L434.817555,756.295143 C438.555922,748.323164 446.101824,741.409664 456.278212,736.633047 L646.011418,647.575624 C664.840405,638.737629 687.231468,634 710.172764,634 L750,634 Z" id="path-2"></path>
+        <filter x="-7.8%" y="-16.4%" width="115.5%" height="125.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.714631165   0 0 0 0 0.714631165   0 0 0 0 0.714631165  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="定稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="送出去的祝福-收到的人" transform="translate(-375.000000, -1090.000000)" fill-rule="nonzero">
+            <g id="Group-9" transform="translate(0.000000, 480.000000)">
+                <g id="Path-4-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

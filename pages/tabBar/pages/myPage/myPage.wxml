@@ -1,0 +1,50 @@
+<template name="item">
+    <view class="item_view">
+        <view class="item_title_view">
+            <view class="item_left_view">
+                <image class="item_icon" src="{{icon}}"></image>
+                <text class="item_title_text">{{title}}</text>
+            </view>
+            <image class="more_image" src="/images/more.png"></image>
+        </view>
+    </view>
+</template>
+<view class="container">
+    <view class="head_view">
+        <image class="head_bg_image" src="/images/my_head_bg.png"></image>
+        <view bindtap="headClick" class="head_data_view">
+            <view class="head_left_view">
+                <view class="head_image_view">
+                    <image class="head_image" mode="aspectFill" src="{{userInfo?userInfo.headUrl:'/images/head_default.png'}}"></image>
+                    <image class="sex_image" src="{{userInfo.gender==1||userInfo.gender==2?userInfo.gender==1?'/images/man_icon.png':'/images/woman_icon.png':''}}"></image>
+                </view>
+                <view class="head_title_view">
+                    <view class="user_name">{{userInfo?userInfo.nickname:'立即登录'}}</view>
+                    <view class="user_job">{{subtitle}}</view>
+                </view>
+            </view>
+            <image class="head_more_image" src="/images/my_head_more.png"></image>
+        </view>
+        <button bindgetuserinfo="getUserInfo" class="login_btn" openType="getUserInfo" wx:if="{{!userInfo}}"></button>
+    </view>
+    <view class="my_list_view">
+        <navigator bindtap="{{userInfo.token?'needsClick':'showModalConfirm'}}" url="{{userInfo.token?'/pages/my/pages/productExperiencePage/productExperiencePage?token='+userInfo.token:''}}">
+            <template is="item" data="{{icon:'/images/more_xiao.svg',title:'产品体验'}}"></template>
+        </navigator>
+        <navigator bindtap="{{userInfo.token?'needsClick':'showModalConfirm'}}" url="{{userInfo.token?'/pages/my/pages/myNeedsPage/myNeedsPage?token='+userInfo.token:''}}">
+            <template is="item" data="{{icon:'/images/my_requirement_icon.png',title:'我的需求'}}"></template>
+        </navigator>
+        <navigator bindtap="{{userInfo.token?'messageClick':'showModalConfirm'}}" url="{{userInfo.token?'/pages/my/pages/messageCenterPage/messageCenterPage?token='+userInfo.token:''}}">
+            <template is="item" data="{{icon:'/images/my_messsage_icon.png',title:'消息中心'}}"></template>
+        </navigator>
+        <navigator bindtap="helpClick" url="">
+            <template is="item" data="{{icon:'/images/my_help_icon.png',title:'使用帮助'}}"></template>
+        </navigator>
+        <navigator bindtap="{{userInfo.token?'feedbackClick':'showModalConfirm'}}" url="{{userInfo.token?'/pages/my/pages/feedbackPage/feedbackPage?token='+userInfo.token:''}}">
+            <template is="item" data="{{icon:'/images/my_advice_icon.png',title:'意见反馈'}}"></template>
+        </navigator>
+        <navigator bindtap="contactClick" url="/pages/my/pages/contactPage/contactPage">
+            <template is="item" data="{{icon:'/images/my_contact_icon.png',title:'联系我们'}}"></template>
+        </navigator>
+    </view>
+</view>

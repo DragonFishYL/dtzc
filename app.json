@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/tabBar/pages/homePage/homePage",
+    "pages/tabBar/pages/myPage/myPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FCFDFF",
+    "backgroundColor": "#FCFDFF",
+    "navigationBarTitleText": "少先队科技",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#2e6dff",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/pages/homePage/homePage",
+        "text": "首页",
+        "iconPath": "images/tabBar_home.png",
+        "selectedIconPath": "images/tabBar_home_s.png"
+      },
+      {
+        "pagePath": "pages/tabBar/pages/myPage/myPage",
+        "text": "我的",
+        "iconPath": "images/tabBar_my.png",
+        "selectedIconPath": "images/tabBar_my_s.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/home/",
+      "pages": [
+        "pages/home/pages/submitDemandOnePage/submitDemandOnePage",
+        "pages/home/pages/submitDemandTwoPage/submitDemandTwoPage",
+        "pages/home/pages/submitDemandThreePage/submitDemandThreePage",
+        "pages/home/pages/submitSuccessPage/submitSuccessPage",
+        "pages/home/pages/planPage/planPage",
+        "pages/home/pages/casePage/casePage",
+        "pages/home/pages/caseDetailPage/caseDetailPage",
+        "pages/home/pages/planDetailPage/planDetailPage"
+      ]
+    },
+    {
+      "root": "pages/my/",
+      "pages": [
+        "pages/my/pages/myNeedsPage/myNeedsPage",
+        "pages/my/pages/messageCenterPage/messageCenterPage",
+        "pages/my/pages/feedbackPage/feedbackPage",
+        "pages/my/pages/contactPage/contactPage",
+        "pages/my/pages/myDataPage/myDataPage",
+        "pages/my/pages/myNeedsDetailPage/myNeedsDetailPage",
+        "pages/my/pages/webView/webView",
+        "pages/my/pages/productExperiencePage/productExperiencePage"
+      ]
+    },
+    {
+      "root": "pages/blessingCard/",
+      "pages": [
+        "pages/blessingCard/blessingCardPage/blessingCardPage",
+        "pages/blessingCard/cardDetailPage/cardDetailPage",
+        "pages/blessingCard/blessingRecordPage/blessingRecordPage",
+        "pages/blessingCard/shareCardPage/shareCardPage"
+      ]
+    },
+    {
+      "root": "pages/login/",
+      "pages": [
+        "pages/login/loginPage/loginPage"
+      ]
+    }
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wxda68fd99a06e832d",
+    "wx6b6cb15df2836ebe",
+    "wx6531dc7ecd1fda41",
+    "wxd5b830f5656da6dd"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

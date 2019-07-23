@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="750px" height="161px" viewBox="0 0 750 161" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,853.567839 L19.867699,808.914267 L286.602719,697.447393 C288.888988,696.491976 291.3422,696 293.820071,696 L452.340462,696 C454.710977,696 457.05992,696.450276 459.262395,697.326886 L739.624646,808.914267 L748.989218,853.567839 L0,853.567839 Z" id="path-1"></path>
+        <filter x="-0.5%" y="-2.9%" width="100.9%" height="104.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.714631165   0 0 0 0 0.714631165   0 0 0 0 0.714631165  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="定稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="送出去的祝福-收到的人" transform="translate(0.000000, -1173.000000)" fill-rule="nonzero">
+            <g id="Group-9" transform="translate(0.000000, 480.000000)">
+                <g id="Path-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
